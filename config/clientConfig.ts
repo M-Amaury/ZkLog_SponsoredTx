@@ -18,9 +18,7 @@ const clientConfigSchema = z.object({
 
 const clientConfig = clientConfigSchema.parse({
   SUI_NETWORK: process.env.NEXT_PUBLIC_SUI_NETWORK!,
-  SUI_NETWORK_NAME: process.env.NEXT_PUBLIC_SUI_NETWORK_NAME as
-    | "mainnet"
-    | "testnet",
+  SUI_NETWORK_NAME: process.env.NEXT_PUBLIC_SUI_NETWORK_NAME as "mainnet" | "testnet",
   ENOKI_API_KEY: process.env.NEXT_PUBLIC_ENOKI_API_KEY!,
   GOOGLE_CLIENT_ID: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!,
   PACKAGE_ID: process.env.NEXT_PUBLIC_PACKAGE_ID!,

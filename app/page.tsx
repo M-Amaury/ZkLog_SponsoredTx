@@ -2,10 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useCustomWallet } from "@/contexts/CustomWallet";
-import ProfilePopover from "@/components/ProfilePopover";
-import { CreateCounter } from "@/components/CreateCounter";
 import { isValidSuiObjectId } from "@mysten/sui/utils";
-import { Counter } from "@/components/Counter";
 
 export default function HomePage() {
   const { isConnected } = useCustomWallet();
@@ -19,24 +16,20 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="w-full h-full min-h-screen">
-      <h1 className="text-4xl font-bold mb-4">Welcome to Enoki Demo App</h1>
-      <div className="flex flex-col items-center sm:flex-row gap-4 sm:items-start">
-        {isConnected ? (
-          counterId ? (
-            <Counter id={counterId} />
-          ) : (
-            <CreateCounter
-              onCreated={(id) => {
-                window.location.hash = id;
-                setCounter(id);
-              }}
-            />
-          )
-        ) : (
-          <div>Please connect your wallet to continue.</div>
-        )}
-      </div>
-    </div>
+    <main className="flex flex-col items-center w-full min-h-screen bg-stone-300 overflow-hidden">
+      <header className="relative w-full h-screen">
+        <img 
+          src="https://media.gqmagazine.fr/photos/5c5d52664a0794dfffc694ad/16:9/w_1600,h_900,c_limit/villa%20elon%20musk.png" 
+          alt="Background" 
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-neutral-500">
+          <h1 className="text-8xl font-bold mb-8 max-md:text-4xl">SuitHome</h1>
+          <p className="text-2xl text-center max-w-md px-4">
+            Buy houses parts simplier and faster
+          </p>
+        </div>
+      </header>
+    </main>
   );
 }
