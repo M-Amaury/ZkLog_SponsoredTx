@@ -7,7 +7,7 @@ import { CreateCounter } from "@/components/CreateCounter";
 import { isValidSuiObjectId } from "@mysten/sui/utils";
 import { Counter } from "@/components/Counter";
 
-export default function Page() {
+export default function HomePage() {
   const { isConnected } = useCustomWallet();
   const [counterId, setCounter] = useState<string | null>(null);
 
@@ -19,11 +19,8 @@ export default function Page() {
   }, []);
 
   return (
-    <div className="w-full h-full min-h-screen p-2">
-      <div className="w-full flex flex-row items-center justify-between">
-        <h1 className="text-4xl font-bold m-4">Enoki Demo App</h1>
-        <ProfilePopover />
-      </div>
+    <div className="w-full h-full min-h-screen">
+      <h1 className="text-4xl font-bold mb-4">Welcome to Enoki Demo App</h1>
       <div className="flex flex-col items-center sm:flex-row gap-4 sm:items-start">
         {isConnected ? (
           counterId ? (

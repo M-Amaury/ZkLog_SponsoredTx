@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { ProvidersAndLayout } from "./ProvidersAndLayout";
+import Header from "@/components/Header";
 import "./globals.css";
 import "@mysten/dapp-kit/dist/index.css";
 
@@ -10,13 +11,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body>
-        <ProvidersAndLayout>{children}</ProvidersAndLayout>
+        <ProvidersAndLayout>
+          <Header />
+          <main className="p-4">
+            {children}
+          </main>
+        </ProvidersAndLayout>
       </body>
     </html>
   );
