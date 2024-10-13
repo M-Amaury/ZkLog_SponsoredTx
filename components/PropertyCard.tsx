@@ -56,8 +56,9 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
           </div>
         </div>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="flex flex-col space-y-2">
         <Button className="w-full">View Property</Button>
+        <Button className="w-full">Buy Property</Button>
       </CardFooter>
     </Card>
   );
