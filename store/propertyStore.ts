@@ -17,16 +17,19 @@ export interface Property {
 interface PropertyStore {
   properties: Property[];
   addProperty: (property: Property) => void;
+  removeProperty: (address: string) => void;
 }
 
 export const usePropertyStore = create<PropertyStore>()(
   persist(
     (set) => ({
       properties: [],
-      addProperty: (property) => set((state) => {
-        console.log('Adding property:', property);
-        return { properties: [...state.properties, property] };
-      }),
+      addProperty: (property) => set((state) => ({
+        properties: [...state.properties, property]
+      })),
+      removeProperty: (address) => set((state) => ({
+        properties: state.properties.filter(prop => prop.address !== address)
+      })),
     }),
     {
       name: 'property-storage',

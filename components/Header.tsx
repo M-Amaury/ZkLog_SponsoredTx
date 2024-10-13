@@ -21,22 +21,22 @@ export default function Header() {
             </Link>
           </div>
           <nav className="hidden md:flex flex-grow justify-center space-x-2">
-            <Link href="/route1">
+            <Link href="/Marketplace">
               <Button variant="ghost" className="text-gray-800 hover:bg-blue-300 hover:bg-opacity-50 text-sm py-1">
                 Marketplace
               </Button>
             </Link>
-            <Link href="/route2">
+            <Link href="/Collaterize-Tokens">
               <Button variant="ghost" className="text-gray-800 hover:bg-blue-300 hover:bg-opacity-50 text-sm py-1">
                 Collateralize Tokens
               </Button>
             </Link>
-            <Link href="/route3">
+            <Link href="/Sell-Tokens">
               <Button variant="ghost" className="text-gray-800 hover:bg-blue-300 hover:bg-opacity-50 text-sm py-1">
                 Sell Tokens
               </Button>
             </Link>
-            <Link href="/create-offer">
+            <Link href="/Create-Offer">
               <Button variant="ghost" className="text-gray-800 hover:bg-blue-300 hover:bg-opacity-50 text-sm py-1">
                 Create an offer
               </Button>

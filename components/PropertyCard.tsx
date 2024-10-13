@@ -12,7 +12,7 @@ interface PropertyCardProps {
   expectedIncome: number;
   incomeStartDate: string;
   incomePerToken: number;
-  imageUrl?: string; // Rendre imageUrl optionnel
+  imageUrl?: string;
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({
@@ -67,7 +67,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
       </CardContent>
       <CardFooter className="flex flex-col space-y-2">
         <Button className="w-full">View Property</Button>
-        <Button className="w-full">Buy Property</Button>
+        <Button className="w-full bg-blue-400 hover:bg-blue-600 text-white">Buy Property</Button>
       </CardFooter>
     </Card>
   );
