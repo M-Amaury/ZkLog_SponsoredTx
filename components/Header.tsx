@@ -1,32 +1,51 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from './ui/button';
 import ProfilePopover from './ProfilePopover';
 
 export default function Header() {
-
   return (
-    <header className="flex items-center justify-between p-4 bg-white shadow-md">
-      <div className="flex items-center">
-        <Link href="/">
-          <Image src="/logo.png" alt="Logo" width={50} height={50} />
-        </Link>
-      </div>
-      <nav className="flex space-x-4">
-        <Link href="/route1">
-          <Button variant="ghost">Marketplace</Button>
-        </Link>
-        <Link href="/route2">
-          <Button variant="ghost">Collateralize Tokens</Button>
-        </Link>
-        <Link href="/route3">
-          <Button variant="ghost">Sell Tokens</Button>
-        </Link>
-      </nav>
-      <div className="flex items-center space-x-4">
-        <ProfilePopover />
+    <header className="bg-gradient-to-l from-blue-400 via-blue-200 to-blue-50 text-gray-800 shadow-lg w-full">
+      <div className="container mx-auto px-0">
+        <div className="flex items-center justify-between">
+          <div className="flex-shrink-0 pl-4">
+            <Link href="/" className="flex items-center">
+              <img 
+                src="/logo.png" 
+                alt="SuitHome Logo" 
+                width={80} 
+                height={80} 
+                className="rounded-full object-cover -my-2"
+              />
+            </Link>
+          </div>
+          <nav className="hidden md:flex flex-grow justify-center space-x-2">
+            <Link href="/route1">
+              <Button variant="ghost" className="text-gray-800 hover:bg-blue-300 hover:bg-opacity-50 text-sm py-1">
+                Marketplace
+              </Button>
+            </Link>
+            <Link href="/route2">
+              <Button variant="ghost" className="text-gray-800 hover:bg-blue-300 hover:bg-opacity-50 text-sm py-1">
+                Collateralize Tokens
+              </Button>
+            </Link>
+            <Link href="/route3">
+              <Button variant="ghost" className="text-gray-800 hover:bg-blue-300 hover:bg-opacity-50 text-sm py-1">
+                Sell Tokens
+              </Button>
+            </Link>
+            <Link href="/create-offer">
+              <Button variant="ghost" className="text-gray-800 hover:bg-blue-300 hover:bg-opacity-50 text-sm py-1">
+                Create an offer
+              </Button>
+            </Link>
+          </nav>
+          <div className="flex-shrink-0 pr-4">
+            <ProfilePopover />
+          </div>
+        </div>
       </div>
     </header>
   );

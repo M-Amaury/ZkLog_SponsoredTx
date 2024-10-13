@@ -17,12 +17,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ProvidersAndLayout>
-          <Header />
-          <main className="p-4">
-            {children}
-          </main>
-        </ProvidersAndLayout>
+        <div className="stylized-background">
+          <ProvidersAndLayout>
+            <Header />
+            <main className="container mx-auto px-4 py-8">
+              {children}
+            </main>
+          </ProvidersAndLayout>
+        </div>
       </body>
     </html>
   );

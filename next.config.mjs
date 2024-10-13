@@ -6,7 +6,7 @@ const nextConfig = {
     GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
   },
   images: {
-    domains: ['media.gqmagazine.fr'], // Add other domains as needed
+    domains: ['media.gqmagazine.fr', 'via.placeholder.com'],
   },
 };
 

@@ -12,6 +12,7 @@ interface PropertyCardProps {
   expectedIncome: number;
   incomeStartDate: string;
   incomePerToken: number;
+  imageUrl?: string; // Rendre imageUrl optionnel
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({
@@ -24,9 +25,17 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
   expectedIncome,
   incomeStartDate,
   incomePerToken,
+  imageUrl,
 }) => {
   return (
     <Card className="w-full max-w-sm">
+      <div className="relative w-full h-48 bg-gray-200 flex items-center justify-center rounded-t-lg">
+        {imageUrl ? (
+          <img src={imageUrl} alt={address} className="w-full h-full object-cover rounded-t-lg" />
+        ) : (
+          <span className="text-gray-500">No Image Available</span>
+        )}
+      </div>
       <CardHeader>
         <CardTitle className="text-lg">{address}</CardTitle>
         <div className="text-sm text-gray-500">{status} | {country} | {company}</div>
@@ -43,7 +52,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
           </div>
           <div>
             <div className="font-semibold">Expected Income</div>
-            <div>{expectedIncome.toFixed(2)}%</div>
+            <div>{expectedIncome === 0 ? 'TBA' : `${expectedIncome.toFixed(2)}%`}</div>
             <div className="text-xs text-gray-500">Not including capital appreciation</div>
           </div>
           <div>
@@ -52,7 +61,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
           </div>
           <div>
             <div className="font-semibold">Income per Token</div>
-            <div>${incomePerToken.toFixed(2)} / year</div>
+            <div>{incomePerToken === 0 ? 'TBA' : `$${incomePerToken.toFixed(2)} / year`}</div>
           </div>
         </div>
       </CardContent>
